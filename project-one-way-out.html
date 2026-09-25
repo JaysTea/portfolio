@@ -1,0 +1,85 @@
+<div id="ajax-page" class="ajax-page-content">
+    <div class="ajax-page-wrapper">
+        <div class="ajax-page-nav">
+            <div class="nav-item ajax-page-prev-next">
+                <a class="ajax-page-load" href="project-avarice.html"><i class="lnr lnr-chevron-left"></i></a>
+                <a class="ajax-page-load" href="project-wfh.html"><i class="lnr lnr-chevron-right"></i></a>
+            </div>
+            <div class="nav-item ajax-page-close-button">
+                <a id="ajax-page-close-button" href="#"><i class="lnr lnr-cross"></i></a>
+            </div>
+        </div>
+
+        <div class="ajax-page-title">
+            <h1>One Way Out</h1>
+            <p class="ajax-page-subtitle">Theme: Pirate Ship</p>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-8 col-md-8 portfolio-block">
+                <div class="owl-carousel portfolio-page-carousel">
+                    <div class="item">
+                        <a class="lightbox" href="img/portfolio/one-way-out/board.jpg" title="Design PDF of One Way Out"><img src="img/portfolio/one-way-out/board.jpg" alt="Design PDF of One Way Out" /></a>
+                        <p class="portfolio-page-caption">Design PDF of One Way Out</p>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    jQuery(document).ready(function($){
+                        $('.portfolio-page-carousel').imagesLoaded(function(){
+                            $('.portfolio-page-carousel').owlCarousel({
+                                smartSpeed:1200,
+                                items: 1,
+                                loop: false,
+                                dots: true,
+                                nav: true,
+                                navText: false,
+                                margin: 10,
+                                autoHeight:true
+                            });
+                        });
+                    });
+                </script>
+
+                <!-- About the Project -->
+                <div class="project-overview">
+                    <div class="block-title">
+                        <h3>About the Project</h3>
+                    </div>
+                    <p class="text-justify">The theme here is a pirate ship. The main concept was to play with the idea of tilting and perspective. The designed map was meant to be made as a 3D game, such that all the visual storytelling, foreshadowing, and visual hints would assist the player in finding their way through the escape room.</p>
+                    <p class="text-justify">To have an environment that changes to solve puzzles, I chose the setting of a ship. Using the existing knowledge of players where weight can dictate the tilt of an object in the ocean, I used a chandelier to indicate the tilt of the ship. This then foreshadows that other items could be shifted with the tilt. Being a design of a 3D space, I realised player perspective can be exploited as well; therefore, it was made such that in the process of clearing the game, the treasure is visible and acts as a hint on how to collect it.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-4 col-md-4 portfolio-block">
+                <!-- Project Info -->
+                <div class="project-description">
+                    <div class="block-title">
+                        <h3>Project Info</h3>
+                    </div>
+                    <ul class="project-general-info">
+                        <li><p><i class="fa fa-gamepad"></i> Escape room (3D)</p></li>
+                        <li><p><i class="fa fa-user"></i> Level &amp; puzzle design</p></li>
+                        <li><p><i class="fa fa-university"></i> DigiPen Bilbao</p></li>
+                    </ul>
+
+                    <div class="tags-block">
+                        <div class="block-title">
+                            <h3>Skills &amp; Tools</h3>
+                        </div>
+                        <ul class="tags">
+                            <li><a>Level Design</a></li>
+                            <li><a>Puzzle Design</a></li>
+                            <li><a>Environmental Storytelling</a></li>
+                            <li><a>Player Perspective</a></li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a class="btn-primary" href="files/OneWayOut_JasonTeo.pdf" target="_blank" rel="noopener"><i class="far fa-file-pdf"></i> Design board (PDF)</a>
+                    </div>
+                </div>
+                <!-- /Project Info -->
+            </div>
+        </div>
+    </div>
+</div>

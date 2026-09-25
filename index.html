@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <title>Jason Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- TODO: description = the short blurb Google and link previews show for your site -->
+    <meta name="description" content="Portfolio of Jason Teo, game designer and programmer." />
+    <meta name="author" content="Jason Teo" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" type="text/css">
+    <link rel="stylesheet" href="css/animations.css" type="text/css">
+    <link rel="stylesheet" href="css/perfect-scrollbar.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+
+    <!-- Theme (dark / light) - loaded early to avoid a flash of the wrong theme -->
+    <script src="js/theme.js"></script>
+  </head>
+
+  <body>
+    <!-- Animated Background -->
+    <div class="lm-animated-bg" style="background-image: url(img/main_bg.png);"></div>
+    <!-- /Animated Background -->
+
+    <!-- Loading animation -->
+    <div class="preloader">
+      <div class="preloader-animation">
+        <div class="preloader-spinner">
+        </div>
+      </div>
+    </div>
+    <!-- /Loading animation -->
+
+    <div class="page">
+      <div class="page-content">
+
+          <header id="site_header" class="header mobile-menu-hide">
+            <!-- Keeps the sidebar fully visible (otherwise the content card slides over it after Home) -->
+            <button type="button" class="sidebar-pin" aria-pressed="false" title="Keep the sidebar open">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6l-1 6 4 4H6l4-4-1-6zM12 13v8"/></svg>
+            </button>
+
+            <div class="header-content">
+              <div class="header-photo">
+                <img src="img/temp_profilepic.jpeg" alt="Jason Teo">
+              </div>
+              <div class="header-titles">
+                <h2>Jason Teo</h2>
+                <h4>Game Designer | Programmer</h4>
+              </div>
+            </div>
+
+            <ul class="main-menu">
+              <li class="active">
+                <a href="#home" class="nav-anim">
+                  <span class="menu-icon lnr lnr-home"></span>
+                  <span class="link-text">Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="#about-me" class="nav-anim">
+                  <span class="menu-icon lnr lnr-user"></span>
+                  <span class="link-text">About Me</span>
+                </a>
+              </li>
+              <li>
+                <a href="#resume" class="nav-anim">
+                  <span class="menu-icon lnr lnr-graduation-hat"></span>
+                  <span class="link-text">Resume</span>
+                </a>
+              </li>
+              <li>
+                <a href="#portfolio" class="nav-anim">
+                  <span class="menu-icon lnr lnr-briefcase"></span>
+                  <span class="link-text">Portfolio</span>
+                </a>
+              </li>
+              <li>
+                <a href="#blog" class="nav-anim">
+                  <span class="menu-icon lnr lnr-book"></span>
+                  <span class="link-text">Blog</span>
+                </a>
+              </li>
+              <!-- Contact page is hidden for now (LinkedIn + e-mail are in the sidebar).
+                   To bring it back: uncomment this menu item AND remove the <template> tags
+                   around the Contact section further down.
+              <li>
+                <a href="#contact" class="nav-anim">
+                  <span class="menu-icon lnr lnr-envelope"></span>
+                  <span class="link-text">Contact</span>
+                </a>
+              </li>
+              -->
+            </ul>
+
+            <div class="social-links">
+              <ul>
+                <li><a href="https://www.linkedin.com/in/jason-teo-jun-hao/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="mailto:jay.tea.015s@gmail.com" title="E-mail"><i class="fas fa-envelope"></i></a></li>
+              </ul>
+            </div>
+
+            <div class="header-buttons">
+              <!-- TODO: save your CV as files/JasonTeo_CV.pdf (or change the href to match your file name) -->
+              <a href="files/JasonTeo_CV.pdf" target="_blank" class="btn btn-primary">Download CV</a>
+
+              <div class="theme-toggle-wrap">
+                <button type="button" class="theme-toggle" role="switch" aria-label="Light theme" aria-checked="false">
+                  <span class="theme-toggle-knob">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="copyrights">© 2026 All rights reserved.</div>
+          </header>
+
+          <!-- Mobile Navigation -->
+          <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <!-- End Mobile Navigation -->
+
+          <!-- Arrows Nav -->
+          <div class="lmpixels-arrows-nav">
+            <div class="lmpixels-arrow-left" title="Previous section"><i class="lnr lnr-chevron-up"></i></div>
+            <div class="lmpixels-arrow-right" title="Next section"><i class="lnr lnr-chevron-down"></i></div>
+          </div>
+          <!-- End Arrows Nav -->
+
+          <div class="content-area">
+            <div class="animated-sections">
+              <!-- Home Subpage -->
+              <section data-id="home" class="animated-section start-page">
+                <div class="section-content vcentered">
+
+                    <div class="row">
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="title-block">
+                          <h2>Jason Teo</h2>
+                          <!-- Rotating subtitles: add or remove .item blocks; each shows for 1.9s (set in js/main.js) -->
+                          <div class="text-rotation">
+                            <div class="item">
+                              <div class="sp-subtitle">Game Designer</div>
+                            </div>
+                            
+                            <div class="item">
+                              <div class="sp-subtitle">Programmer</div>
+                            </div>
+
+                            <div class="item">
+                              <div class="sp-subtitle">Aspiring Artist</div>
+                            </div>
+
+                            <div class="item">
+                              <div class="sp-subtitle">Hobbyist Video Editor</div>
+                            </div>
+
+                            <div class="item">
+                              <div class="sp-subtitle">Hobbyist Bassist/Guitarist</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                </div>
+              </section>
+              <!-- End of Home Subpage -->
+
+              <!-- About Me Subpage -->
+              <section data-id="about-me" class="animated-section">
+                <div class="section-content">
+                  <div class="page-title">
+                    <h2>About <span>Me</span></h2>
+                  </div>
+
+                  <!-- Personal Information -->
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-8">
+                      <p>Hello! I'm Jason, a Singapore-based game designer/ programmer and a creator at heart. I'm a Year 3 Computer Science student in Interactive Media and Game Development at DigiPen Singapore, graduating in 2028. I started out in C++ engine development and I'm now expanding into level design. I led a 10-person team building our own engine, Hellmaker. Outside of code, I play music, draw, edit videos, tinker with my homelab, and am currently learning character design!</p>
+                    </div>
+
+                    <!-- Same width as one fun fact card, so it lines up with the right-hand card below -->
+                    <div class="col-xs-12 col-sm-4">
+                      <!-- Personal details: icon, small label, larger value.
+                           Icons are Linearicons (lnr-...). -->
+                      <div class="info-list info-list-stacked">
+                        <ul>
+                          <li>
+                            <span class="info-icon lnr lnr-calendar-full"></span>
+                            <span class="info-text">
+                              <span class="title">Age</span>
+                              <span class="value">24</span>
+                            </span>
+                          </li>
+
+                          <li>
+                            <span class="info-icon lnr lnr-map-marker"></span>
+                            <span class="info-text">
+                              <span class="title">Residence</span>
+                              <span class="value">Singapore</span>
+                            </span>
+                          </li>
+
+                          <li>
+                            <span class="info-icon lnr lnr-envelope"></span>
+                            <span class="info-text">
+                              <span class="title">E-mail</span>
+                              <a class="value" href="mailto:jay.tea.015s@gmail.com">jay.tea.015s@gmail.com</a>
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Personal Information -->
+
+                  <div class="white-space-50"></div>
+
+                  <!-- Services -->
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                      <div class="block-title">
+                        <h3>What <span>I Do</span></h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                      <div class="col-inner">
+                        <div class="info-list-w-icon">
+                          <div class="info-block-w-icon">
+                            <div class="ci-icon">
+                              <i class="lnr lnr-dice"></i>
+                            </div>
+                            <div class="ci-text">
+                              <h4>Game Design</h4>
+                              <p>Form follows function. I design from the shoes of whoever lives in a space, so levels feel believable and players can lean on what they already know instead of being taught. When inspiration doesn't come, I go <i>Similar yet Different</i>: start from something that works, then push it into its own thing.</p>
+                            </div>
+                          </div>
+                          <div class="info-block-w-icon">
+                            <div class="ci-icon">
+                              <i class="lnr lnr-code"></i>
+                            </div><div class="ci-text">
+                              <h4>Software Programming</h4>
+                              <p>I started out in C++ engine development, leading a 10-person team to build our own engine, Hellmaker, while working on its architecture and gameplay systems. I've also built a Unity WebGL roguelike in C# for NTU's medical school, plus a Pixi.js prototype and a React website. Being both designer and programmer, I get to build the systems my designs need.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Services -->
+
+                  <div class="white-space-30"></div>
+
+                  <!-- Testimonials
+                       Quotes are exact words from the person (use … where text is skipped).
+                       To add another, copy the whole <div class="testimonial"> block. -->
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                      <div class="block-title">
+                        <h3>Testimonials</h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                      <div class="testimonials testimonials-list">
+                        <div class="testimonial no-photo">
+                          <div class="text">
+                            <p>I was surprised by his talent and curiosity as a designer. He has a tendency to explore ideas beyond what is initially asked of him, experimenting with mechanics and spaces and often finding interesting solutions in the process. … He has a natural talent for game design that I believe will take him far, and he remains humble and kind and strives to go beyond and do a little bit better every time.</p>
+                          </div>
+
+                          <div class="author-info">
+                            <h4 class="author">Sergi Subirats</h4>
+                            <h5 class="company">Lead Game Designer at Deca Games · Affiliate Lecturer at DigiPen Institute of Technology Europe - Bilbao</h5>
+                            <div class="icon">
+                              <i class="fas fa-quote-right"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Testimonials -->
+
+                  <div class="white-space-30"></div>
+
+                  <!-- Fun Facts -->
+                  <!-- Up to 3 fun facts per row (each col-sm-4 is a third); a 4th starts a new row -->
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+
+                      <div class="block-title">
+                        <h3>Fun <span>Facts</span></h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row fun-facts-row">
+                    <div class="col-xs-12 col-sm-4">
+                      <div class="fun-fact gray-default">
+                        <i class="lnr lnr-pencil"></i>
+                        <h4>Completed Illustrations</h4>
+                        <span class="fun-fact-block-value">2</span>
+                        <span class="fun-fact-block-text"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4">
+                      <div class="fun-fact gray-default">
+                        <i class="lnr lnr-music-note"></i>
+                        <h4>Performed on Stage</h4>
+                        <span class="fun-fact-block-value">5</span>
+                        <span class="fun-fact-block-text"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Fun Facts -->
+
+                </div>
+              </section>
+              <!-- End of About Me Subpage -->
+
+              <!-- Resume Subpage -->
+              <section data-id="resume" class="animated-section">
+                <div class="section-content">
+                  <div class="page-title">
+                    <h2>Resume</h2>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-7">
+
+                      <div class="block-title">
+                        <h3>Education</h3>
+                      </div>
+                      
+                      <div class="timeline timeline-second-style clearfix">
+                        <div class="timeline-item clearfix">
+                          <div class="left-part">
+                            <h5 class="item-period">2024 - Current</h5>
+                            <span class="item-company">Digipen (Singapore) - Singapore Institute of Technology</span>
+                          </div>
+                          <div class="divider"></div>
+                          <div class="right-part">
+                            <h4 class="item-title">Bachelor of Science, Computer Science in Interactive Media and Game Design</h4>
+                            <p>Programmer and designer on team game projects, including as Project Manager, working on engine architecture, gameplay systems and level design. Recently completed the mandatory Overseas Immersion Programme at DigiPen Institute of Technology Europe-Bilbao, Spain, where I further developed my level design skills.</p>
+                          </div>
+                        </div>
+
+                        <div class="timeline-item clearfix">
+                          <div class="left-part">
+                            <h5 class="item-period">2019 - 2022</h5>
+                            <span class="item-company">Ngee Ann Polytechnic</span>
+                          </div>
+                          <div class="divider"></div>
+                          <div class="right-part">
+                            <h4 class="item-title">Diploma in Information Technology</h4>
+                            <p>Here I had my first glimpse at my current chosen route to be a game developer & designer!</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="white-space-50"></div>
+
+                      <div class="block-title">
+                        <h3>Experience</h3>
+                      </div>
+
+                      <div class="timeline timeline-second-style clearfix">
+                        <div class="timeline-item clearfix">
+                          <div class="left-part">
+                            <h5 class="item-period">2021 (March 8 - Aug 6)</h5>
+                            <span class="item-company">NTU Lee Kong Chian School of Medicine</span>
+                          </div>
+                          <div class="divider"></div>
+                          <div class="right-part">
+                            <h4 class="item-title">Programmer Intern, "Enhancing Medical Education Through Art, Design and Media"</h4>
+                            <p>Designed and built educational games and interactive media for NTU's medical school. My main project was DigiAnatomy: I rebuilt the department's existing anatomy quiz game (Digital Medic) from scratch as a roguelike in Unity WebGL (C#), for medical students from Year 1 to senior years. I worked with two art students on assets. I also prototyped an isometric pixel game (Pixi.js → Unity WebGL), built a React.js website, made Captivate study modules, and edited course videos, working in an Agile/Scrum team.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Skills & Certificates -->
+                    <div class="col-xs-12 col-sm-5">
+                      <!-- Design Skills -->
+                      <div class="block-title">
+                        <h3>Design <span>Skills</span></h3>
+                      </div>
+
+                      <div class="skills-info skills-second-style">
+                        <!-- Skill 1 -->
+                        <div class="skill clearfix">
+                          <h4>Level Design</h4>
+                          <div class="skill-value">90%</div>
+                        </div>
+                        <div class="skill-container skill-1">
+                          <div class="skill-percentage"></div>
+                        </div>
+                        <!-- End of Skill 1 -->
+                        
+                        <!-- Skill 2 -->
+                        <div class="skill clearfix">
+                          <h4>Game Design</h4>
+                          <div class="skill-value">80%</div>
+                        </div>
+                        <div class="skill-container skill-2">
+                          <div class="skill-percentage"></div>
+                        </div>
+                        <!-- End of Skill 2 -->
+
+                        <!-- Skill 3 -->
+                        <div class="skill clearfix">
+                          <h4>Video Editing</h4>
+                          <div class="skill-value">40%</div>
+                        </div>
+                        <div class="skill-container skill-2">
+                          <div class="skill-percentage"></div>
+                        </div>
+                        <!-- End of Skill 3 -->
+
+                        
+                      </div>
+                      <!-- End of Design Skills -->
+
+                      <div class="white-space-10"></div>
+
+                      <!-- Coding Skills -->
+                      <div class="block-title">
+                        <h3>Coding <span>Skills</span></h3>
+                      </div>
+
+                      <div class="skills-info skills-second-style">
+                        <!-- Skill 3 -->
+                        <div class="skill clearfix">
+                          <h4>C</h4>
+                          <div class="skill-value">70%</div>
+                        </div>
+                        <div class="skill-container skill-5">
+                          <div class="skill-percentage"></div>
+                        </div>
+                        <!-- End of Skill 3 -->
+
+                        <!-- Skill 4 -->
+                        <div class="skill clearfix">
+                          <h4>C++</h4>
+                          <div class="skill-value">85%</div>
+                        </div>
+                        <div class="skill-container skill-6">
+                          <div class="skill-percentage"></div>
+                        </div>
+                        <!-- End of Skill 4 -->
+                        
+                        <!-- Skill 5 -->
+                        <div class="skill clearfix">
+                          <h4>C#</h4>
+                          <div class="skill-value">65%</div>
+                        </div>
+                        <div class="skill-container skill-7">
+                          <div class="skill-percentage"></div>
+                        </div>
+                        <!-- End of Skill 5 -->
+
+                      </div>
+                      <!-- End of Coding Skills -->
+
+                      <div class="white-space-10"></div>
+
+                      <!-- Learning Skills -->
+                      <div class="block-title">
+                        <h3>Skills <span>[Learning]</span></h3>
+                      </div>
+
+                      <div class="skills-info skills-second-style">
+                        <!-- Skill 4 -->
+                        <div class="skill clearfix">
+                          <h4>Art Illustration</h4>
+                          <div class="skill-value">30%</div>
+                        </div>
+                        <div class="skill-container skill-2">
+                          <div class="skill-percentage"></div>
+                        </div>
+                        <!-- End of Skill 4 -->
+
+                        <!-- Skill 5 -->
+                        <div class="skill clearfix">
+                          <h4>Character Design</h4>
+                          <div class="skill-value">30%</div>
+                        </div>
+                        <div class="skill-container skill-2">
+                          <div class="skill-percentage"></div>
+                        </div>
+                        <!-- End of Skill 4 -->
+                      </div>
+                      
+                      <div class="white-space-10"></div>
+
+                      <!-- Knowledges -->
+                      <div class="block-title">
+                        <h3>Knowledges</h3>
+                      </div>
+
+                      <ul class="knowledges">
+                        <li>Team Management</li>
+                        <li>Time Management</li>
+                        <li>Communication</li>
+                        <li>Problem-Solving</li>
+                        <li>Flexibility</li>
+                      </ul>
+                      <!-- End of Knowledges -->
+                    </div>
+                    <!-- End of Skills & Certificates -->
+                  </div>
+
+                  <div class="white-space-50"></div>
+
+                  <!-- Certificates -->
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                      <div class="block-title">
+                        <h3>Certificates</h3>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <!-- Certificate 1 -->
+                    <div class="col-xs-12 col-sm-6">
+                      <div class="certificate-item clearfix">
+                        <!-- TODO: optional logo for the certificate (e.g. JLPT logo), then uncomment:
+                        <div class="certi-logo">
+                          <img src="img/YOUR-LOGO.png" alt="JLPT logo">
+                        </div>
+                        -->
+
+                        <div class="certi-content">
+                          <div class="certi-title">
+                            <h4>JLPT N5</h4>
+                          </div>
+                          <!-- TODO: certificate/registration ID (or delete this block):
+                          <div class="certi-id">
+                            <span>ID: XXXX</span>
+                          </div>
+                          -->
+                          <!-- TODO: the date you passed, then uncomment:
+                          <div class="certi-date">
+                            <span>DD Month YYYY</span>
+                          </div>
+                          -->
+                          <div class="certi-company">
+                            <span></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End of Certificate 1 -->
+
+                  </div>
+                  <!-- End of Certificates -->
+                </div>
+              </section>
+              <!-- End of Resume Subpage -->
+
+              <!-- Portfolio Subpage -->
+              <section data-id="portfolio" class="animated-section">
+                <div class="section-content">
+                  <div class="page-title">
+                    <h2>Portfolio</h2>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                      <!-- Portfolio Content -->
+                      <div class="portfolio-content">
+
+                        <ul class="portfolio-filters">
+                          <li class="active">
+                            <a class="filter btn btn-sm btn-link" data-group="category_all">All</a>
+                          </li>
+                          <li>
+                            <a class="filter btn btn-sm btn-link" data-group="category_design">Design</a>
+                          </li>
+                          <li>
+                            <a class="filter btn btn-sm btn-link" data-group="category_programming">Programming</a>
+                          </li>
+                          <li>
+                            <a class="filter btn btn-sm btn-link" data-group="category_creative-works">Creative Works</a>
+                          </li>
+                        </ul>
+
+                        <!-- Portfolio Overview ("All" tab)
+                             One row per category. The thumbnails are copied automatically
+                             from the Portfolio Grid below, so only edit the grid.
+                             data-preview-limit = how many thumbnails each row shows. -->
+                        <div class="portfolio-overview" data-preview-limit="4">
+                          <div class="portfolio-row" data-group="category_design">
+                            <div class="portfolio-row-header">
+                              <div class="block-title">
+                                <h3>Design</h3>
+                              </div>
+                              <a class="portfolio-show-more" data-group="category_design">Show more <span class="lnr lnr-arrow-right"></span></a>
+                            </div>
+                            <div class="portfolio-grid portfolio-row-track"></div>
+                          </div>
+
+                          <div class="portfolio-row" data-group="category_programming">
+                            <div class="portfolio-row-header">
+                              <div class="block-title">
+                                <h3>Programming</h3>
+                              </div>
+                              <a class="portfolio-show-more" data-group="category_programming">Show more <span class="lnr lnr-arrow-right"></span></a>
+                            </div>
+                            <div class="portfolio-grid portfolio-row-track"></div>
+                          </div>
+
+                          <div class="portfolio-row" data-group="category_creative-works">
+                            <div class="portfolio-row-header">
+                              <div class="block-title">
+                                <h3>Creative Works</h3>
+                              </div>
+                              <a class="portfolio-show-more" data-group="category_creative-works">Show more <span class="lnr lnr-arrow-right"></span></a>
+                            </div>
+                            <div class="portfolio-grid portfolio-row-track"></div>
+                          </div>
+                        </div>
+                        <!-- End of Portfolio Overview -->
+
+                        <!-- Portfolio Grid (Design / Programming / Creative Works tabs)
+                             Every project goes here. data-groups sets its category:
+                             category_design, category_programming or category_creative-works.
+                             A card can be in several categories. Within each tab, cards show
+                             in the order they appear here, so keep the best work first and
+                             Polytechnic-era work last. Clicking a card opens project-*.html. -->
+                        <div class="portfolio-grid portfolio-full-grid three-columns is-hidden">
+
+                          <!-- ===== Design (strongest first; see "My Design Intent") ===== -->
+                          <figure class="item standard" data-groups='["category_all", "category_design"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/avarice/thumb.jpg" alt="Avarice" title="" />
+                              <a href="project-avarice.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="far fa-file-alt"></i>
+                            <h4 class="name">Avarice</h4>
+                            <span class="category">Design</span>
+                          </figure>
+                          <figure class="item standard" data-groups='["category_all", "category_design"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/one-way-out/thumb.jpg" alt="One Way Out" title="" />
+                              <a href="project-one-way-out.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="far fa-file-alt"></i>
+                            <h4 class="name">One Way Out</h4>
+                            <span class="category">Design</span>
+                          </figure>
+                          <figure class="item standard" data-groups='["category_all", "category_design"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/wfh/thumb.jpg" alt="Work From Home" title="" />
+                              <a href="project-wfh.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="far fa-file-alt"></i>
+                            <h4 class="name">Work From Home</h4>
+                            <span class="category">Design</span>
+                          </figure>
+                          <figure class="item standard" data-groups='["category_all", "category_design"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/4koma/thumb.jpg" alt="4-Koma" title="" />
+                              <a href="project-4koma.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="fas fa-video"></i>
+                            <h4 class="name">4-Koma</h4>
+                            <span class="category">Design</span>
+                          </figure>
+                          <figure class="item standard" data-groups='["category_all", "category_design"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/m2/thumb.jpg" alt="This Is How You Do It" title="" />
+                              <a href="project-m2.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="fas fa-video"></i>
+                            <h4 class="name">This Is How You Do It</h4>
+                            <span class="category">Design</span>
+                          </figure>
+                          <figure class="item standard" data-groups='["category_all", "category_design"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/cat-cafe/thumb.jpg" alt="C&sup3; Cat Caf&eacute;" title="" />
+                              <a href="project-cat-cafe.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="far fa-file-alt"></i>
+                            <h4 class="name">C&sup3; Cat Caf&eacute;</h4>
+                            <span class="category">Design</span>
+                          </figure>
+                          <figure class="item standard" data-groups='["category_all", "category_design"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/spud-scheme/thumb.jpg" alt="Spud Scheme" title="" />
+                              <a href="project-spud-scheme.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="fas fa-video"></i>
+                            <h4 class="name">Spud Scheme</h4>
+                            <span class="category">Design</span>
+                          </figure>
+
+                          <!-- ===== Design + Programming (first card in the Programming tab) ===== -->
+                          <figure class="item standard" data-groups='["category_all", "category_design", "category_programming"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/infernumb/thumb.jpg" alt="Infernumb" title="" />
+                              <a href="project-infernumb.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="fas fa-video"></i>
+                            <h4 class="name">Infernumb</h4>
+                            <span class="category">Design &middot; Programming</span>
+                          </figure>
+
+                          <!-- ===== Design: supporting work and older projects ===== -->
+                          <figure class="item standard" data-groups='["category_all", "category_design"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/celeste/thumb.jpg" alt="Game Analysis: Celeste" title="" />
+                              <a href="project-celeste.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="far fa-file-alt"></i>
+                            <h4 class="name">Game Analysis: Celeste</h4>
+                            <span class="category">Design</span>
+                          </figure>
+                          <figure class="item standard" data-groups='["category_all", "category_design"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/digianatomy/thumb.jpg" alt="DigiAnatomy" title="" />
+                              <a href="project-digianatomy.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="far fa-file-alt"></i>
+                            <h4 class="name">DigiAnatomy</h4>
+                            <span class="category">Design &middot; Polytechnic</span>
+                          </figure>
+
+                          <!-- ===== Creative Works ===== -->
+                          <figure class="item lbimage" data-groups='["category_all", "category_creative-works"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/art/evil-neuro-thumb.jpg" alt="Evil Neuro: New Outfit" title="" />
+                              <a class="lightbox" title="Evil Neuro: New Outfit" href="img/portfolio/art/evil-neuro.jpg"></a>
+                            </div>
+
+                            <i class="far fa-image"></i>
+                            <h4 class="name">Evil Neuro: New Outfit</h4>
+                            <span class="category">Creative Works</span>
+                          </figure>
+                          <figure class="item lbimage" data-groups='["category_all", "category_creative-works"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/art/ajaeson-thumb.jpg" alt="Ajaeson" title="" />
+                              <a class="lightbox" title="Ajaeson" href="img/portfolio/art/ajaeson.jpg"></a>
+                            </div>
+
+                            <i class="far fa-image"></i>
+                            <h4 class="name">Ajaeson</h4>
+                            <span class="category">Creative Works</span>
+                          </figure>
+                          <figure class="item standard" data-groups='["category_all", "category_creative-works"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/infernumb-ost/thumb.jpg" alt="Infernumb Soundtrack" title="" />
+                              <a href="project-infernumb-ost.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="fa fa-volume-up"></i>
+                            <h4 class="name">Infernumb Soundtrack</h4>
+                            <span class="category">Creative Works</span>
+                          </figure>
+
+                          <!-- ===== Programming + Creative Works (DSA videos) ===== -->
+                          <figure class="item standard" data-groups='["category_all", "category_programming", "category_creative-works"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/dsa-hashmap/thumb.jpg" alt="Hashmaps Explained" title="" />
+                              <a href="project-dsa-hashmap.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="fas fa-video"></i>
+                            <h4 class="name">Hashmaps Explained</h4>
+                            <span class="category">Programming &middot; Video</span>
+                          </figure>
+                          <figure class="item standard" data-groups='["category_all", "category_programming", "category_creative-works"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/dsa-polygon/thumb.jpg" alt="Preserving Area, Losing Vertices" title="" />
+                              <a href="project-dsa-polygon.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="fas fa-video"></i>
+                            <h4 class="name">Preserving Area, Losing Vertices</h4>
+                            <span class="category">Programming &middot; Video</span>
+                          </figure>
+
+                          <!-- ===== Older (Polytechnic) work: kept at the end ===== -->
+                          <figure class="item standard" data-groups='["category_all", "category_programming"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/asteria/thumb.jpg" alt="Asteria Auto Door" title="" />
+                              <a href="project-asteria.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="fas fa-video"></i>
+                            <h4 class="name">Asteria Auto Door</h4>
+                            <span class="category">Programming &middot; Polytechnic</span>
+                          </figure>
+                          <figure class="item standard" data-groups='["category_all", "category_programming"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/ewl/thumb.jpg" alt="EWL Mobile App" title="" />
+                              <a href="project-ewl.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="fas fa-video"></i>
+                            <h4 class="name">EWL Mobile App</h4>
+                            <span class="category">Programming &middot; Polytechnic</span>
+                          </figure>
+                          <figure class="item standard" data-groups='["category_all", "category_creative-works"]'>
+                            <div class="portfolio-item-img">
+                              <img src="img/portfolio/visume/thumb.jpg" alt="Video Resume" title="" />
+                              <a href="project-visume.html" class="ajax-page-load"></a>
+                            </div>
+
+                            <i class="fas fa-video"></i>
+                            <h4 class="name">Video Resume</h4>
+                            <span class="category">Creative &middot; Polytechnic</span>
+                          </figure>
+                        </div>
+                        <!-- End of Portfolio Grid -->
+                      </div>
+                      <!-- End of Portfolio Content -->
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- End of Portfolio Subpage -->
+
+              <!-- Blog Subpage -->
+              <section data-id="blog" class="animated-section">
+                <div class="section-content">
+                  <div class="page-title">
+                    <h2>Blog</h2>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                      <!-- Sort button (by each card's post-date) and tag filter
+                           (the tag checkboxes are built automatically from the
+                           data-tags on each card below) -->
+                      <div class="blog-filter">
+                        <div class="blog-filter-bar">
+                          <button type="button" class="blog-sort-toggle" title="Show oldest posts first">
+                            <svg class="blog-filter-icon blog-sort-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16M3 16l4 4 4-4M13 6h8M13 11h6M13 16h4"/></svg>
+                            <span class="blog-sort-label">Newest first</span>
+                          </button>
+                          <button type="button" class="blog-filter-toggle" aria-expanded="false" aria-controls="blog-filter-panel">
+                            <svg class="blog-filter-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18l-7 8.5V19l-4 2v-8.5L3 4z"/></svg>
+                            Filters<span class="blog-filter-count"></span>
+                          </button>
+                          <div class="blog-filter-chips"></div>
+                        </div>
+
+                        <div class="blog-filter-panel" id="blog-filter-panel">
+                          <div class="blog-filter-panel-inner">
+                            <div class="blog-filter-panel-box">
+                              <div class="blog-filter-panel-header">
+                                <h4>Filter posts</h4>
+                                <button type="button" class="blog-filter-close" title="Close"><span class="lnr lnr-cross"></span></button>
+                              </div>
+
+                              <h6 class="blog-filter-heading">Tags</h6>
+                              <div class="blog-filter-options"></div>
+
+                              <div class="blog-filter-actions">
+                                <button type="button" class="blog-filter-clear">Clear</button>
+                                <button type="button" class="blog-filter-apply">Apply Filters</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="blog-masonry blog-grid two-columns clearfix">
+                        
+                        <!-- Blog cards: newest first. To add a post, copy a card and change the
+                             link (href), image, date, title, subtitle and data-tags
+                             (the same tags as in the post, separated by commas). -->
+
+                        <!-- Art Journey, Part 5 -->
+                        <div class="item post-5" data-tags="art, mentorship, character design, level design">
+                          <div class="blog-card">
+                            <div class="media-block">
+                              <div class="category">
+                                <a href="blog-art-journey-5.html" title="Art Journey, Part 5">Art Journey</a>
+                              </div>
+                              <a href="blog-art-journey-5.html">
+                                <img src="img/blog/art-journey/part-5_2026-09-21/thumb.jpg" class="size-blog-masonry-image-two-c" alt="What it takes to design a Character" title="" />
+                                <div class="mask"></div>
+                              </a>
+                            </div>
+                            <div class="post-info">
+                              <div class="post-date">21 Sep 2026</div>
+                              <a href="blog-art-journey-5.html">
+                                <h4 class="blog-item-title">What it takes to design a Character</h4>
+                              </a>
+                              <p class="blog-item-subtitle">Surprisingly similar to level design!</p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End of Art Journey, Part 5 -->
+
+                        <!-- Art Journey, Part 4 -->
+                        <div class="item post-4" data-tags="art, mentorship, rendering, character design">
+                          <div class="blog-card">
+                            <div class="media-block">
+                              <div class="category">
+                                <a href="blog-art-journey-4.html" title="Art Journey, Part 4">Art Journey</a>
+                              </div>
+                              <a href="blog-art-journey-4.html">
+                                <img src="img/blog/art-journey/part-4_2026-09-07/thumb.jpg" class="size-blog-masonry-image-two-c" alt="Getting Cleaner Renders and Character Design?" title="" />
+                                <div class="mask"></div>
+                              </a>
+                            </div>
+                            <div class="post-info">
+                              <div class="post-date">07 Sep 2026</div>
+                              <a href="blog-art-journey-4.html">
+                                <h4 class="blog-item-title">Getting Cleaner Renders and Character Design?</h4>
+                              </a>
+                              <p class="blog-item-subtitle">I might finally understand less is more</p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End of Art Journey, Part 4 -->
+
+                        <!-- Art Journey, Part 3 -->
+                        <div class="item post-3" data-tags="art, mentorship, rendering">
+                          <div class="blog-card">
+                            <div class="media-block">
+                              <div class="category">
+                                <a href="blog-art-journey-3.html" title="Art Journey, Part 3">Art Journey</a>
+                              </div>
+                              <a href="blog-art-journey-3.html">
+                                <img src="img/blog/art-journey/part-3_2026-08-31/thumb.jpg" class="size-blog-masonry-image-two-c" alt="Rendering! Oh Joy!" title="" />
+                                <div class="mask"></div>
+                              </a>
+                            </div>
+                            <div class="post-info">
+                              <div class="post-date">31 Aug 2026</div>
+                              <a href="blog-art-journey-3.html">
+                                <h4 class="blog-item-title">Rendering! Oh Joy!</h4>
+                              </a>
+                              <p class="blog-item-subtitle">This took awhile...</p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End of Art Journey, Part 3 -->
+
+                        <!-- Art Journey, Part 2 -->
+                        <div class="item post-2" data-tags="art, mentorship, color, color planning">
+                          <div class="blog-card">
+                            <div class="media-block">
+                              <div class="category">
+                                <a href="blog-art-journey-2.html" title="Art Journey, Part 2">Art Journey</a>
+                              </div>
+                              <a href="blog-art-journey-2.html">
+                                <img src="img/blog/art-journey/part-2_2026-08-25/thumb.jpg" class="size-blog-masonry-image-two-c" alt="Color planning!" title="" />
+                                <div class="mask"></div>
+                              </a>
+                            </div>
+                            <div class="post-info">
+                              <div class="post-date">25 Aug 2026</div>
+                              <a href="blog-art-journey-2.html">
+                                <h4 class="blog-item-title">Color planning!</h4>
+                              </a>
+                              <p class="blog-item-subtitle">I didn't know this was a thing</p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End of Art Journey, Part 2 -->
+
+                        <!-- Art Journey, Part 1 -->
+                        <div class="item post-1" data-tags="art, mentorship, copy studies, original art">
+                          <div class="blog-card">
+                            <div class="media-block">
+                              <div class="category">
+                                <a href="blog-art-journey-1.html" title="Art Journey, Part 1">Art Journey</a>
+                              </div>
+                              <a href="blog-art-journey-1.html">
+                                <img src="img/blog/art-journey/part-1_2026-08-17/other-works/Evil_Stealing_Cookies.png" class="size-blog-masonry-image-two-c" alt="Meeting my Art Mentor!" title="" />
+                                <div class="mask"></div>
+                              </a>
+                            </div>
+                            <div class="post-info">
+                              <div class="post-date">17 Aug 2026</div>
+                              <a href="blog-art-journey-1.html">
+                                <h4 class="blog-item-title">Meeting my Art Mentor!</h4>
+                              </a>
+                              <p class="blog-item-subtitle">Copy Studies? Original Art?</p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End of Art Journey, Part 1 -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </section>
+              <!-- End of Blog Subpage -->
+
+              <!-- Contact Subpage: hidden for now. <template> keeps it out of the site; delete the
+                   <template> and </template> tags (and uncomment the menu item) to bring it back. -->
+              <template id="contact-page">
+              <!-- Contact Subpage -->
+              <section data-id="contact" class="animated-section">
+                <div class="section-content">
+                  <div class="page-title">
+                    <h2>Contact</h2>
+                  </div>
+
+                  <div class="row">
+                    <!-- Contact Info -->
+                    <div class="col-xs-12 col-sm-4">
+                      <!-- Location and e-mail copied from your About Me section -->
+                      <div class="lm-info-block gray-default">
+                        <i class="lnr lnr-map-marker"></i>
+                        <h4>Singapore</h4>
+                        <span class="lm-info-block-value"></span>
+                        <span class="lm-info-block-text"></span>
+                      </div>
+
+                      <div class="lm-info-block gray-default">
+                        <i class="lnr lnr-envelope"></i>
+                        <h4><a href="mailto:jay.tea.015s@gmail.com">jay.tea.015s@gmail.com</a></h4>
+                        <span class="lm-info-block-value"></span>
+                        <span class="lm-info-block-text"></span>
+                      </div>
+
+                      <!-- TODO (optional): phone number. Keep in mind this page is public.
+                      <div class="lm-info-block gray-default">
+                        <i class="lnr lnr-phone-handset"></i>
+                        <h4>+65 XXXX XXXX</h4>
+                        <span class="lm-info-block-value"></span>
+                        <span class="lm-info-block-text"></span>
+                      </div>
+                      -->
+
+                      <!-- TODO (optional): availability, e.g. "Open to internships" / "Available from 2028"
+                      <div class="lm-info-block gray-default">
+                        <i class="lnr lnr-checkmark-circle"></i>
+                        <h4>Open to Internships</h4>
+                        <span class="lm-info-block-value"></span>
+                        <span class="lm-info-block-text"></span>
+                      </div>
+                      -->
+
+
+                    </div>
+                    <!-- End of Contact Info -->
+
+                    <!-- Contact Form -->
+                    <div class="col-xs-12 col-sm-8">
+                      <!-- TODO: contact form. The template form sent mail through contact_form/contact_form.php,
+                           but GitHub Pages cannot run PHP, so it would never deliver messages (and its
+                           reCAPTCHA key belonged to the template author). Options:
+                           1. Leave it out: the e-mail on the left already works.
+                           2. Use a free form service such as Formspree (formspree.io): create a form, then
+                              set action="https://formspree.io/f/YOUR_ID" on the form below, remove the
+                              g-recaptcha line, and uncomment it. The original form is kept below for reference.
+                      <div class="block-title">
+                        <h3>How Can I <span>Help You?</span></h3>
+                      </div>
+
+                      <form id="contact_form" class="contact-form" action="contact_form/contact_form.php" method="post">
+
+                        <div class="messages"></div>
+
+                        <div class="controls two-columns">
+                          <div class="fields clearfix">
+                            <div class="left-column">
+                              <div class="form-group form-group-with-icon">
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="" required="required" data-error="Name is required.">
+                                <label>Full Name</label>
+                                <div class="form-control-border"></div>
+                                <div class="help-block with-errors"></div>
+                              </div>
+
+                              <div class="form-group form-group-with-icon">
+                                <input id="form_email" type="email" name="email" class="form-control" placeholder="" required="required" data-error="Valid email is required.">
+                                <label>Email Address</label>
+                                <div class="form-control-border"></div>
+                                <div class="help-block with-errors"></div>
+                              </div>
+
+                              <div class="form-group form-group-with-icon">
+                                <input id="form_subject" type="text" name="subject" class="form-control" placeholder="" required="required" data-error="Subject is required.">
+                                <label>Subject</label>
+                                <div class="form-control-border"></div>
+                                <div class="help-block with-errors"></div>
+                              </div>
+                            </div>
+                            <div class="right-column">
+                              <div class="form-group form-group-with-icon">
+                                <textarea id="form_message" name="message" class="form-control" placeholder="" rows="7" required="required" data-error="Please, leave me a message."></textarea>
+                                <label>Message</label>
+                                <div class="form-control-border"></div>
+                                <div class="help-block with-errors"></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI"></div>
+      
+                          <input type="submit" class="button btn-send" value="Send message">
+                        </div>
+                      </form>
+                      -->
+                    </div>
+                    <!-- End of Contact Form -->
+                  </div>
+
+                </div>
+              </section>
+              <!-- End of Contact Subpage -->
+              </template>
+            </div>
+          </div>
+
+          <!-- Card width switch: original / wider / widest (desktop only) -->
+          <div class="card-width-switch" role="group" aria-label="Card width">
+            <button type="button" data-width="0" title="Original width" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="7" width="8" height="10" rx="2"/></svg></button>
+            <button type="button" data-width="1" title="Wider" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="7" width="14" height="10" rx="2"/></svg></button>
+            <button type="button" data-width="2" title="Widest" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="2"/></svg></button>
+          </div>
+
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/animating.js"></script>
+
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+
+    <script src='js/perfect-scrollbar.min.js'></script>
+    <script src='js/jquery.shuffle.min.js'></script>
+    <script src='js/masonry.pkgd.min.js'></script>
+    <script src='js/owl.carousel.min.js'></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+
+    <script src="js/validator.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
