@@ -125,12 +125,13 @@ var PageTransitions = (function ($, options) {
     // top, to the previous one). It needs a deliberate extra push once the
     // card has stopped at its edge, so a fast flick to the bottom doesn't also
     // skip a card. Like the arrows it wraps around (Blog -> Home and back).
+    // Works with a mouse wheel or trackpad, and with swipes on touch screens.
     function scrollNavInit() {
         var container = $('.animated-sections')[0],
             PUSH_NEEDED = 200,   // px of scrolling at the edge (about two mouse-wheel notches)
             SETTLE_MS = 350,     // the card must have stopped scrolling this long first
             GESTURE_GAP_MS = 600, // a pause this long starts a fresh push
-            COOLDOWN_MS = 1200,  // after changing card, ignore scrolling for a moment
+            COOLDOWN_MS = 600,   // after changing card, ignore scrolling for a moment (wheel and swipe)
             push = 0,
             lastWheel = 0,
             lastScroll = 0,
@@ -170,58 +171,41 @@ var PageTransitions = (function ($, options) {
             }
         }, true);
 
-        container.addEventListener('wheel', function (e) {
-            var now = Date.now(),
-                section = $('.animated-section.section-active')[0],
-                delta = e.deltaY,
-                forward = delta > 0,
-                key, $target;
+        // A card that has just opened starts at its top, resting there
+        $(window).on('hashchange', function () {
+            edgeKey = location.hash.split('/')[0].slice(1) + '-';
+            edgeSince = Date.now();
+        });
 
-            if (!section || isAnimating || e.ctrlKey || now < blockedUntil ||
-                Math.abs(e.deltaX) > Math.abs(delta) || delta === 0) {
-                return;
+        function atEdge(section, forward) {
+            return forward ?
+                section.scrollTop + section.clientHeight >= section.scrollHeight - 2 :
+                section.scrollTop <= 0;
+        }
+
+        // At the edge we're heading for, and has been sitting there a moment
+        function restingAt(section, forward, now) {
+            var key = section.getAttribute('data-id') + (forward ? '+' : '-');
+
+            if (!atEdge(section, forward)) {
+                return false;
             }
-
-            // Lines/pages to pixels (Firefox reports mouse wheels in lines)
-            if (e.deltaMode === 1) { delta *= 40; }
-            else if (e.deltaMode === 2) { delta *= section.clientHeight; }
-
-            key = section.getAttribute('data-id') + (forward ? '+' : '-');
-
-            // Not at the edge we're scrolling towards: just a normal scroll
-            if (forward ? section.scrollTop + section.clientHeight < section.scrollHeight - 2 :
-                          section.scrollTop > 0) {
-                push = 0;
-                lastWheel = now;
-                return;
-            }
-
             // Just reached this edge: start the clock. A card too short to
             // scroll (Home) can't have just arrived, so it counts straight away.
             if (edgeKey !== key) {
                 edgeKey = key;
                 edgeSince = section.scrollHeight > section.clientHeight + 2 ? now : 0;
             }
+            return now - edgeSince >= SETTLE_MS && now - lastScroll >= SETTLE_MS;
+        }
 
-            if (now - edgeSince < SETTLE_MS || now - lastScroll < SETTLE_MS) {
-                push = 0;
-                lastWheel = now;
-                return;
-            }
+        function canNavigate(section, now) {
+            return section && !isAnimating && now >= blockedUntil;
+        }
 
-            if (now - lastWheel > GESTURE_GAP_MS) {
-                push = 0;
-            }
-            lastWheel = now;
-            push += Math.abs(delta);
-
-            if (push < PUSH_NEEDED) {
-                return;
-            }
-            push = 0;
-
-            // Same order as the arrows, wrapping round at either end
-            $target = forward ?
+        // Same order as the arrows, wrapping round at either end
+        function goTo(forward, now) {
+            var $target = forward ?
                 $('.main-menu a.active').parent('li').next('li').children('a') :
                 $('.main-menu a.active').parent('li').prev('li').children('a');
             if (!$target.length) {
@@ -234,6 +218,90 @@ var PageTransitions = (function ($, options) {
                 $target.click();
                 arrowDirection = null;
             }
+        }
+
+        // Mouse wheel / trackpad
+        container.addEventListener('wheel', function (e) {
+            var now = Date.now(),
+                section = $('.animated-section.section-active')[0],
+                delta = e.deltaY,
+                forward = delta > 0;
+
+            if (!canNavigate(section, now) || e.ctrlKey ||
+                Math.abs(e.deltaX) > Math.abs(delta) || delta === 0) {
+                return;
+            }
+
+            // Lines/pages to pixels (Firefox reports mouse wheels in lines)
+            if (e.deltaMode === 1) { delta *= 40; }
+            else if (e.deltaMode === 2) { delta *= section.clientHeight; }
+
+            if (!restingAt(section, forward, now)) {
+                push = 0;
+                lastWheel = now;
+                return;
+            }
+
+            if (now - lastWheel > GESTURE_GAP_MS) {
+                push = 0;
+            }
+            lastWheel = now;
+            push += Math.abs(delta);
+
+            if (push >= PUSH_NEEDED) {
+                push = 0;
+                goTo(forward, now);
+            }
+        }, { passive: true });
+
+        // Touch: a swipe that starts while the card is already resting at its
+        // bottom (or top) and pulls on past it moves to the next (or previous)
+        // card. A swipe that only carries the card to its edge just scrolls.
+        var SWIPE_NEEDED = 80,   // px the finger must travel
+            touch = null;
+
+        container.addEventListener('touchstart', function (e) {
+            var now = Date.now(),
+                section = $('.animated-section.section-active')[0];
+
+            touch = null;
+            if (e.touches.length !== 1 || !canNavigate(section, now)) {
+                return;
+            }
+            touch = {
+                x: e.touches[0].clientX,
+                y: e.touches[0].clientY,
+                section: section,
+                forward: restingAt(section, true, now),
+                back: restingAt(section, false, now)
+            };
+        }, { passive: true });
+
+        container.addEventListener('touchend', function (e) {
+            var now = Date.now(),
+                t = touch,
+                dx, dy;
+
+            touch = null;
+            if (!t || !e.changedTouches.length || !canNavigate(t.section, now)) {
+                return;
+            }
+            dx = t.x - e.changedTouches[0].clientX;
+            // Finger moved up = scrolling down the page = forward
+            dy = t.y - e.changedTouches[0].clientY;
+
+            if (Math.abs(dx) > Math.abs(dy)) {
+                return;
+            }
+            if (dy >= SWIPE_NEEDED && t.forward && atEdge(t.section, true)) {
+                goTo(true, now);
+            } else if (-dy >= SWIPE_NEEDED && t.back && atEdge(t.section, false)) {
+                goTo(false, now);
+            }
+        }, { passive: true });
+
+        container.addEventListener('touchcancel', function () {
+            touch = null;
         }, { passive: true });
     }
 
@@ -666,6 +734,9 @@ var PageTransitions = (function ($, options) {
                     if(endNextPage) {
                         onEndAnimation($pageWrapper, $nextPage, $currentPage);
                         endCurrentPage = false;
+                        // Whichever card finishes last ends the transition
+                        // (without this, navigation locked up for good)
+                        isAnimating = false;
                     }
                 });
 
