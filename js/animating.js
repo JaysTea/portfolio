@@ -117,6 +117,124 @@ var PageTransitions = (function ($, options) {
             }
             arrowDirection = null;
         });
+
+        scrollNavInit();
+    }
+
+    // Scrolling past the end of a card moves to the next card (and past the
+    // top, to the previous one). It needs a deliberate extra push once the
+    // card has stopped at its edge, so a fast flick to the bottom doesn't also
+    // skip a card. Like the arrows it wraps around (Blog -> Home and back).
+    function scrollNavInit() {
+        var container = $('.animated-sections')[0],
+            PUSH_NEEDED = 200,   // px of scrolling at the edge (about two mouse-wheel notches)
+            SETTLE_MS = 350,     // the card must have stopped scrolling this long first
+            GESTURE_GAP_MS = 600, // a pause this long starts a fresh push
+            COOLDOWN_MS = 1200,  // after changing card, ignore scrolling for a moment
+            push = 0,
+            lastWheel = 0,
+            lastScroll = 0,
+            blockedUntil = 0,
+            // Which edge the card is resting on ("about-me+" = bottom of About),
+            // and since when. Browsers may scroll the card before the wheel
+            // handler runs, so a card that only just hit its edge must not
+            // count as already resting there.
+            edgeKey = null,
+            edgeSince = 0;
+
+        if (!container) {
+            return;
+        }
+
+        function edgeOf(section) {
+            if (section.scrollTop + section.clientHeight >= section.scrollHeight - 2) {
+                return section.getAttribute('data-id') + '+';
+            }
+            if (section.scrollTop <= 0) {
+                return section.getAttribute('data-id') + '-';
+            }
+            return null;
+        }
+
+        // 'scroll' doesn't bubble, so listen in the capture phase
+        container.addEventListener('scroll', function (e) {
+            var key;
+            if (!$(e.target).hasClass('animated-section')) {
+                return;
+            }
+            lastScroll = Date.now();
+            key = edgeOf(e.target);
+            if (key !== edgeKey) {
+                edgeKey = key;
+                edgeSince = lastScroll;
+            }
+        }, true);
+
+        container.addEventListener('wheel', function (e) {
+            var now = Date.now(),
+                section = $('.animated-section.section-active')[0],
+                delta = e.deltaY,
+                forward = delta > 0,
+                key, $target;
+
+            if (!section || isAnimating || e.ctrlKey || now < blockedUntil ||
+                Math.abs(e.deltaX) > Math.abs(delta) || delta === 0) {
+                return;
+            }
+
+            // Lines/pages to pixels (Firefox reports mouse wheels in lines)
+            if (e.deltaMode === 1) { delta *= 40; }
+            else if (e.deltaMode === 2) { delta *= section.clientHeight; }
+
+            key = section.getAttribute('data-id') + (forward ? '+' : '-');
+
+            // Not at the edge we're scrolling towards: just a normal scroll
+            if (forward ? section.scrollTop + section.clientHeight < section.scrollHeight - 2 :
+                          section.scrollTop > 0) {
+                push = 0;
+                lastWheel = now;
+                return;
+            }
+
+            // Just reached this edge: start the clock. A card too short to
+            // scroll (Home) can't have just arrived, so it counts straight away.
+            if (edgeKey !== key) {
+                edgeKey = key;
+                edgeSince = section.scrollHeight > section.clientHeight + 2 ? now : 0;
+            }
+
+            if (now - edgeSince < SETTLE_MS || now - lastScroll < SETTLE_MS) {
+                push = 0;
+                lastWheel = now;
+                return;
+            }
+
+            if (now - lastWheel > GESTURE_GAP_MS) {
+                push = 0;
+            }
+            lastWheel = now;
+            push += Math.abs(delta);
+
+            if (push < PUSH_NEEDED) {
+                return;
+            }
+            push = 0;
+
+            // Same order as the arrows, wrapping round at either end
+            $target = forward ?
+                $('.main-menu a.active').parent('li').next('li').children('a') :
+                $('.main-menu a.active').parent('li').prev('li').children('a');
+            if (!$target.length) {
+                $target = $('.main-menu li:' + (forward ? 'first' : 'last') + '-child').children('a');
+            }
+
+            if ($target.length) {
+                blockedUntil = now + COOLDOWN_MS;
+                arrowDirection = forward ? 'forward' : 'back';
+                $target.click();
+                arrowDirection = null;
+            }
+        }, { passive: true });
     }
 
     function getActiveSection() {
